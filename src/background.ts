@@ -6,7 +6,13 @@ import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 import defaultMenu from 'electron-default-menu';
 import { autoUpdater } from "electron-updater"
 import electron_cfg from "electron-cfg"
+import log from "electron-log"
+import path from "path"
 const isDevelopment = process.env.NODE_ENV !== 'production'
+
+Object.assign(console, log.functions);
+electron_cfg.logger(log)
+
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
@@ -45,8 +51,13 @@ async function createMenu() {
   Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 }
 async function createWindow() {
-  const winCfg = electron_cfg.window();
+  const winCfg = electron_cfg.window({
+    name: "mainWindow",
+    saveFullscreen: true,
+    saveMaximize: true
+  });
 
+  log.debug("Node integration is:", process.env.ELECTRON_NODE_INTEGRATION);
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
@@ -58,6 +69,7 @@ async function createWindow() {
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: (process.env.ELECTRON_NODE_INTEGRATION as unknown) as boolean,
       nodeIntegrationInWorker: true,
+      preload: path.join(__dirname, 'preload.js')
     }
   })
   winCfg.assign(win)
@@ -100,6 +112,7 @@ app.on('ready', async () => {
       console.error('Vue Devtools failed to install:', e.toString())
     }
   }
+  registerLocalResourceProtocol()
   createMenu()
   createWindow()
   autoUpdater.checkForUpdatesAndNotify()
@@ -118,6 +131,20 @@ if (isDevelopment) {
       app.quit()
     })
   }
+}
+
+function registerLocalResourceProtocol() {
+  protocol.registerFileProtocol('local-resource', (request, callback) => {
+    const url = request.url.replace(/^local-resource:\/\//, '')
+    // Decode URL to prevent errors when loading filenames with UTF-8 chars or chars like "#"
+    const decodedUrl = decodeURI(url) // Needed in case URL contains spaces
+    try {
+      return callback(decodedUrl)
+    }
+    catch (error) {
+      console.error('ERROR: registerLocalResourceProtocol: Could not get file path:', error)
+    }
+  })
 }
 
 

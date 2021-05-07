@@ -22,6 +22,8 @@ module.exports = {
             nested: false
         },
         electronBuilder: {
+            nodeIntegration: false,
+            preload: 'src/preload.js',
             builderOptions: {
                 publish: ['github'],
                 win: {
