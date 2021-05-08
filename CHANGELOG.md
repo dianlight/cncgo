@@ -1,3 +1,7 @@
+### v0.0.3 (2021-05-08)
+
+- [feat: posteversion CHANGELOG](https://github.com/dianlight/cncgo/commit/558ed036f031274534f3968200a6fbc8b79a7b45) ([dianlight](mailto:lucio.tarantino@gmail.com))
+
 ### v0.0.2 (2021-05-08)
 
 - [fix: before version test](https://github.com/dianlight/cncgo/commit/d29cb907e57dac1467709ec75d407716d00a2165) ([dianlight](mailto:lucio.tarantino@gmail.com))
