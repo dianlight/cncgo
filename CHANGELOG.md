@@ -10,3 +10,7 @@
 - [feat: Addd electron-cfg](https://github.com/dianlight/cncgo/commit/555adc597ab53fcc1f1bf36c408f2099c2f7d703) ([dianlight](mailto:lucio.tarantino@gmail.com))
 - [feat: stage 1.0](https://github.com/dianlight/cncgo/commit/cf603a0f3f68b7592872c50bba56360407509d1b) ([dianlight](mailto:lucio.tarantino@gmail.com))
 - [+1 more](https://github.com/dianlight/cncgo/compare/cf603a0f3f68b7592872c50bba56360407509d1b...v0.0.2)
+
+
+[Unreleased]: https://github.com/dianlight/cncgo/compare/v0.0.4...HEAD
+[0.0.4]: https://github.com/dianlight/cncgo/tree/v0.0.4
