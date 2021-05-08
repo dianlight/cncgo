@@ -1,112 +1,114 @@
 {
-  "name": "cncgo",
-  "version": "0.1.0",
-  "private": true,
-  "description": "A TightCNC UI for Desktop",
-  "author": {
-    "name": "Lucio Tarantino",
-    "email": "lucio.tarantino@gmail.com",
-    "url": "https://github.com/dianlight"
-  },
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "clean": "rimraf -rf dist_electron",
-    "electron:build": "vue-cli-service electron:build",
-    "electron:icon": "electron-icon-builder --input=./src/assets/logo.png --output=./src/assets",
-    "electron:publish": "npm run electron:build -- --linux --win --mac --x64 --arm64 -p always",
-    "electron:release": "npm run electron:build -- --linux --win --mac --x64 --arm64",
-    "electron:serve": "vue-cli-service electron:serve",
-    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
-    "postinstall": "electron-builder install-app-deps && npm run electron:icon",
-    "postuninstall": "electron-builder install-app-deps"
-  },
-  "main": "background.js",
-  "dependencies": {
-    "@mdi/font": "5.9.55",
-    "core-js": "^3.12.0",
-    "electron-cfg": "^1.2.6",
-    "electron-default-menu": "^1.0.2",
-    "electron-log": "^4.3.5",
-    "electron-process-type": "^4.2.0",
-    "electron-updater": "^4.3.8",
-    "roboto-fontface": "*",
-    "vue": "^3.0.0",
-    "vue-class-component": "^8.0.0-0",
-    "vue-i18n": "^9.1.0",
-    "vue-router": "^4.0.0-0",
-    "vue-router-layout": "^0.4.0",
-    "vuetify": "^3.0.0-alpha.0",
-    "vuex": "^4.0.0-0"
-  },
-  "devDependencies": {
-    "@intlify/vue-i18n-loader": "^2.1.0",
-    "@types/electron-devtools-installer": "^2.2.0",
-    "@typescript-eslint/eslint-plugin": "^4.22.1",
-    "@typescript-eslint/parser": "^4.22.1",
-    "@vue/cli-plugin-babel": "~4.5.12",
-    "@vue/cli-plugin-eslint": "~4.5.12",
-    "@vue/cli-plugin-router": "^4.5.12",
-    "@vue/cli-plugin-typescript": "^4.5.12",
-    "@vue/cli-plugin-vuex": "^4.5.12",
-    "@vue/cli-service": "~4.5.12",
-    "@vue/compiler-sfc": "^3.0.11",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.2",
-    "electron": "^12.0.6",
-    "electron-devtools-installer": "^3.2.0",
-    "electron-icon-builder": "^2.0.1",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.9.0",
-    "iconv-corefoundation": "git+https://github.com/mmaietta/iconv-corefoundation.git#chore/arm64",
-    "postcss": "^8.2.14",
-    "rimraf": "^3.0.2",
-    "sass": "^1.32.12",
-    "sass-loader": "^10.0.0",
-    "typescript": "~4.2.4",
-    "vue-auto-routing": "^1.0.1",
-    "vue-cli-plugin-auto-routing": "^1.3.0",
-    "vue-cli-plugin-electron-builder": "^2.0.0-rc.6",
-    "vue-cli-plugin-i18n": "^2.1.0",
-    "vue-cli-plugin-vuetify": "^2.4.0",
-    "worker-plugin": "^5.0.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "cncgo",
+    "version": "0.0.1",
+    "private": true,
+    "description": "A TightCNC UI for Desktop",
+    "author": {
+        "name": "Lucio Tarantino",
+        "email": "lucio.tarantino@gmail.com",
+        "url": "https://github.com/dianlight"
     },
-    "extends": [
-      "plugin:vue/strongly-recommended",
-      "eslint:recommended",
-      "@vue/typescript"
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "clean": "rimraf -rf dist_electron",
+        "electron:build": "vue-cli-service electron:build",
+        "electron:icon": "electron-icon-builder --input=./src/assets/logo.png --output=./src/assets",
+        "electron:publish": "npm run electron:build -- --linux --win --mac --x64 --arm64 -p always",
+        "electron:release": "npm run electron:build -- --linux --win --mac --x64 --arm64",
+        "electron:serve": "vue-cli-service electron:serve",
+        "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
+        "postinstall": "electron-builder install-app-deps && npm run electron:icon",
+        "postuninstall": "electron-builder install-app-deps"
+    },
+    "main": "background.js",
+    "dependencies": {
+        "@mdi/font": "5.9.55",
+        "core-js": "^3.12.0",
+        "electron-cfg": "^1.2.6",
+        "electron-default-menu": "^1.0.2",
+        "electron-log": "^4.3.5",
+        "electron-process-type": "^4.2.0",
+        "electron-updater": "^4.3.8",
+        "roboto-fontface": "*",
+        "vue": "^3.0.0",
+        "vue-class-component": "^8.0.0-0",
+        "vue-i18n": "^9.1.0",
+        "vue-router": "^4.0.0-0",
+        "vue-router-layout": "^0.4.0",
+        "vuetify": "^3.0.0-alpha.0",
+        "vuex": "^4.0.0-0"
+    },
+    "devDependencies": {
+        "@intlify/vue-i18n-loader": "^2.1.0",
+        "@luizalabs/changelogkeeper": "^1.2.0",
+        "@types/electron-devtools-installer": "^2.2.0",
+        "@typescript-eslint/eslint-plugin": "^4.22.1",
+        "@typescript-eslint/parser": "^4.22.1",
+        "@vue/cli-plugin-babel": "~4.5.12",
+        "@vue/cli-plugin-eslint": "~4.5.12",
+        "@vue/cli-plugin-router": "^4.5.12",
+        "@vue/cli-plugin-typescript": "^4.5.12",
+        "@vue/cli-plugin-vuex": "^4.5.12",
+        "@vue/cli-service": "~4.5.12",
+        "@vue/compiler-sfc": "^3.0.11",
+        "@vue/eslint-config-typescript": "^7.0.0",
+        "babel-eslint": "^10.1.0",
+        "babel-loader": "^8.2.2",
+        "electron": "^12.0.6",
+        "electron-devtools-installer": "^3.2.0",
+        "electron-icon-builder": "^2.0.1",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^7.9.0",
+        "iconv-corefoundation": "git+https://github.com/mmaietta/iconv-corefoundation.git#chore/arm64",
+        "offline-github-changelog": "^2.3.0",
+        "postcss": "^8.2.14",
+        "rimraf": "^3.0.2",
+        "sass": "^1.32.12",
+        "sass-loader": "^10.0.0",
+        "typescript": "~4.2.4",
+        "vue-auto-routing": "^1.0.1",
+        "vue-cli-plugin-auto-routing": "^1.3.0",
+        "vue-cli-plugin-electron-builder": "^2.0.0-rc.6",
+        "vue-cli-plugin-i18n": "^2.1.0",
+        "vue-cli-plugin-vuetify": "^2.4.0",
+        "worker-plugin": "^5.0.0"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/strongly-recommended",
+            "eslint:recommended",
+            "@vue/typescript"
+        ],
+        "parserOptions": {
+            "parser": "@typescript-eslint/parser"
+        },
+        "rules": {
+            "vue/attribute-hyphenation": "warn",
+            "vue/attributes-order": "warn",
+            "vue/component-definition-name-casing": "error",
+            "vue/component-name-in-template-casing": "error",
+            "vue/component-tags-order": "warn",
+            "vue/custom-event-name-casing": "error",
+            "vue/match-component-file-name": "error",
+            "vue/no-deprecated-destroyed-lifecycle": "error",
+            "vue/no-deprecated-dollar-listeners-api": "error",
+            "vue/no-deprecated-dollar-scopedslots-api": "error",
+            "vue/no-deprecated-html-element-is": "warn"
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
     ],
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
-    },
-    "rules": {
-      "vue/attribute-hyphenation": "warn",
-      "vue/attributes-order": "warn",
-      "vue/component-definition-name-casing": "error",
-      "vue/component-name-in-template-casing": "error",
-      "vue/component-tags-order": "warn",
-      "vue/custom-event-name-casing": "error",
-      "vue/match-component-file-name": "error",
-      "vue/no-deprecated-destroyed-lifecycle": "error",
-      "vue/no-deprecated-dollar-listeners-api": "error",
-      "vue/no-deprecated-dollar-scopedslots-api": "error",
-      "vue/no-deprecated-html-element-is": "warn"
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:dianlight/cncgo.git"
     }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:dianlight/cncgo.git"
-  }
 }
