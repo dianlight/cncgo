@@ -4,7 +4,13 @@ import log from 'electron-log';
 //window.log = log.functions;
 //window.ipcRenderer = ipcRenderer
 
-contextBridge.exposeInMainWorld("log", log.functions);
+contextBridge.exposeInMainWorld("log", {
+    ...log.functions,
+    //    runOne(member: Exclude<keyof ElectronLog.LogFunctions, 'runOne'>, ...params:any) {
+    run(member, ...params) {
+        log.functions[member](...params);
+    }
+});
 
 // Expose protected methods that allow the renderer process to use
 // the ipcRenderer without exposing the entire object

@@ -116,6 +116,9 @@ app.on('ready', async () => {
   createMenu()
   createWindow()
   autoUpdater.checkForUpdatesAndNotify()
+
+  log.silly("Test Log from background.js",__filename)
+
 })
 
 // Exit cleanly on request from parent process in development mode.
@@ -147,4 +150,6 @@ function registerLocalResourceProtocol() {
   })
 }
 
+
+// **********************  Functional Test 
 

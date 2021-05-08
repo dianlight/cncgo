@@ -4,7 +4,7 @@ module.exports = {
     transpileDependencies: [
         'vuetify'
     ],
-
+    //    lintOnSave: false,
     pluginOptions: {
         i18n: {
             locale: 'en',
@@ -55,10 +55,7 @@ module.exports = {
 
     assetsDir: 'src/assets',
     configureWebpack: {
-        output: {
-            globalObject: "self"
-        },
         devtool: 'source-map',
-        plugins: [new WorkerPlugin()]
+        plugins: [new WorkerPlugin()],
     }
 }
