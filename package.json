@@ -21,8 +21,8 @@
         "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
         "postinstall": "electron-builder install-app-deps && npm run electron:icon",
         "postuninstall": "electron-builder install-app-deps",
-        "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
-        "postversion_": "offline-github-changelog  > CHANGELOG.md"
+        "version_": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
+        "version": "offline-github-changelog  > CHANGELOG.md && git add CHANGELOG.md"
     },
     "main": "background.js",
     "dependencies": {
