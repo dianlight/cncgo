@@ -20,7 +20,8 @@
         "electron:serve": "vue-cli-service electron:serve",
         "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
         "postinstall": "electron-builder install-app-deps && npm run electron:icon",
-        "postuninstall": "electron-builder install-app-deps"
+        "postuninstall": "electron-builder install-app-deps",
+        "postversion": "offline-github-changelog  > CHANGELOG.md"
     },
     "main": "background.js",
     "dependencies": {
